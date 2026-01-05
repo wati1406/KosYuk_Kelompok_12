@@ -1,0 +1,129 @@
+/* role.css - Fixed Version */
+@import 'background.css';
+
+.role-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e7f1ff 100%);
+    padding: 120px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.role-header {
+    margin-bottom: 50px;
+}
+
+.role-title {
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.role-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.role-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.role-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(10, 44, 79, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.role-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-blue);
+}
+
+.role-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+}
+
+.role-box h2 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.role-box p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.btn-role {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-role:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 160, 251, 0.4);
+}
+
+@media (max-width: 768px) {
+    .role-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .role-box {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .role-title {
+        font-size: 2.2rem;
+    }
+}

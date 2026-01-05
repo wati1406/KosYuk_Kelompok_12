@@ -1,0 +1,182 @@
+/* Reset dasar */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header / Navbar */
+header {
+    width: 100%;
+    background-color: #E7EAED;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-top {
+    width: 120px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #0A2C4F;
+    font-weight: bold;
+    transition: color 0.3s;
+    position:relative;
+    padding:5px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px; /* tinggi kotak */
+    width: 0%;
+    background-color: #0A2C4F;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%; /* kotak memanjang sesuai lebar tulisan */
+}
+
+.navbar a:hover {
+    color: #07203a; /* optional: warna teks saat hover */
+}
+
+/* Container landing page */
+.landing-container {
+    position: relative;
+    background-color: #E7EAED; /* warna solid */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    padding-top: 100px; /* supaya tidak tertutup navbar */
+    box-sizing: border-box;
+    color: #0A2C4F;
+}
+
+/* Konten teks */
+.content {
+    text-align: left; /* rata kiri */
+}
+
+/* Judul */
+.title {
+    font-size: 45px; /* lebih besar dari tagline */
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+/* Tagline */
+.tagline {
+    font-size: 15px;
+    margin: 0 0 30px 0;
+    line-height: 1.4;
+}
+
+/* TOMBOL SEPERTI DI REGISTER */
+.btn-group .btn {
+    text-decoration: none;
+    padding: 14px 40px;
+    margin-right: 15px;
+    background: linear-gradient(135deg, #0A2C4F 0%, #18a0fb 100%);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    box-shadow: 0 4px 15px rgba(24, 160, 251, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek kilau seperti di register */
+.btn-group .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-group .btn:hover::before {
+    left: 100%;
+}
+
+.btn-group .btn:hover {
+    background: linear-gradient(135deg, #1A4A7A 0%, #4DC1FF 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(24, 160, 251, 0.3);
+}
+
+.btn-group .btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo-top {
+        width: 80px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .landing-container {
+        padding-left: 20px;
+        padding-top: 80px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .btn-group .btn {
+        padding: 12px 30px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}

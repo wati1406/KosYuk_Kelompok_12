@@ -1,0 +1,680 @@
+/* ============================================
+   VARIABLES & RESET
+   ============================================ */
+:root {
+    --navy-dark: #0a1a2f;
+    --navy-medium: #1a2f4f;
+    --navy-light: #2a3f6f;
+    --primary: #0d6efd;
+    --primary-dark: #0a58ca;
+    --primary-light: #6ea8fe;
+    --secondary: #6f42c1;
+    --accent: #ff6b35;
+    --success: #20c997;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --gray-light: #e9ecef;
+    --title-color: #051424;
+    --carikos-color: #18a0fb;
+    --panduan-color: #051424;
+    --visual-panduan-color: #051424;
+    --pertanyaan-color: #051424;
+    --gradient-navy: linear-gradient(135deg, #0a1a2f 0%, #1a2f4f 50%, #2a3f6f 100%);
+    --gradient-blue: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
+    --gradient-video: linear-gradient(135deg, #1a2f4f 0%, #2a3f6f 50%, #3a4f8f 100%);
+    --gradient-orange: linear-gradient(135deg, #ff6b35 0%, #fd7e14 100%);
+    --gradient-green: linear-gradient(135deg, #20c997 0%, #198754 100%);
+    --gradient-red: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.20);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    min-height: 100vh;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.gradient-text {
+    background: var(--gradient-navy);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.carikos-text {
+    color: var(--carikos-color);
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+.visual-panduan-text {
+    color: var(--visual-panduan-color);
+    font-weight: 800;
+}
+
+.pertanyaan-text {
+    color: var(--pertanyaan-color);
+    font-weight: 800;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.08) 0%, rgba(111, 66, 193, 0.08) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--gray);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* ============================================
+   VIDEO TUTORIAL PREMIUM - FLAT DEFAULT
+   ============================================ */
+.tutorial-premium {
+    padding: 80px 0;
+    position: relative;
+}
+
+.tutorial-header {
+    text-align: left;
+    margin-bottom: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tutorial-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.tutorial-description {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 900px;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Video Container - FLAT DEFAULT */
+.video-premium-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-premium-shadow {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    left: 2.5%;
+    background: rgba(10, 26, 47, 0.1);
+    border-radius: var(--radius-2xl);
+    filter: blur(20px);
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.video-premium-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.video-premium-box {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--gradient-video);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-premium-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl), 0 10px 40px rgba(13, 110, 253, 0.2);
+}
+
+.video-premium-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 70%
+    );
+    animation: gentleGlow 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes gentleGlow {
+    0% { transform: rotate(0deg) translateX(0); opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { transform: rotate(360deg) translateX(0); opacity: 0.5; }
+}
+
+.video-premium-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-premium-placeholder {
+    text-align: center;
+}
+
+.premium-play-btn {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 40px;
+    cursor: pointer;
+}
+
+.play-btn-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 8px 32px rgba(13, 110, 253, 0.4);
+    transition: all 0.3s ease;
+}
+
+.premium-play-btn:hover .play-btn-inner {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 40px rgba(13, 110, 253, 0.6);
+}
+
+.play-btn-inner i {
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 5px;
+}
+
+.play-btn-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(13, 110, 253, 0.3);
+    border-radius: 50%;
+    animation: ringPulse 2s ease-in-out infinite;
+}
+
+.ring-2 {
+    animation-delay: 0.5s;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.video-premium-status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 30px;
+    background: rgba(10, 26, 47, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.status-indicator {
+    display: flex;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.status-dot.red { background: #ff5f57; }
+.status-dot.yellow { background: #febc2e; }
+.status-dot.green { background: #28c840; }
+
+.status-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   FAQ PREMIUM - TANPA ICON, KOTAK TETAP
+   ============================================ */
+.faq-premium {
+    padding: 80px 0;
+    position: relative;
+}
+
+.faq-header {
+    text-align: left;
+    margin-bottom: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.faq-description {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 900px;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.faq-premium-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-premium-item {
+    background: white;
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.faq-premium-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(13, 110, 253, 0.2);
+}
+
+.faq-premium-item.active {
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(13, 110, 253, 0.3);
+    background: white;
+}
+
+.faq-premium-header {
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.faq-premium-header:hover {
+    background: rgba(13, 110, 253, 0.03);
+}
+
+.faq-premium-header h3 {
+    flex: 1;
+    font-size: 1.2rem;
+    color: var(--title-color);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+    padding-right: 60px;
+}
+
+.faq-premium-header:hover h3 {
+    color: var(--primary);
+}
+
+.faq-premium-item.active .faq-premium-header h3 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.faq-toggle {
+    position: absolute;
+    right: 25px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(13, 110, 253, 0.2);
+    background: white;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-toggle:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.faq-premium-item.active .faq-toggle {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: rotate(180deg);
+}
+
+.faq-premium-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+.faq-premium-item.active .faq-premium-content {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 0 30px 25px;
+}
+
+.answer-content {
+    padding: 10px 0 0;
+}
+
+.answer-text p {
+    color: #2c3e50;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .tutorial-header h2,
+    .faq-header h2 {
+        font-size: 2.4rem;
+    }
+    
+    .video-premium-box {
+        height: 450px;
+    }
+    
+    .faq-premium-header {
+        padding: 20px 25px;
+    }
+    
+    .faq-premium-header h3 {
+        font-size: 1.15rem;
+        padding-right: 50px;
+    }
+    
+    .faq-toggle {
+        right: 20px;
+        width: 34px;
+        height: 34px;
+    }
+    
+    .faq-premium-item.active .faq-premium-content {
+        padding: 0 25px 22px;
+    }
+    
+    .answer-text p {
+        font-size: 1.08rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .video-premium-box {
+        height: 400px;
+    }
+    
+    .premium-play-btn {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .play-btn-inner {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .play-btn-inner i {
+        font-size: 2rem;
+    }
+    
+    .faq-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .faq-premium-header {
+        padding: 18px 20px;
+    }
+    
+    .faq-premium-header h3 {
+        font-size: 1.1rem;
+        padding-right: 45px;
+    }
+    
+    .faq-toggle {
+        right: 18px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .faq-premium-item.active .faq-premium-content {
+        padding: 0 20px 20px;
+    }
+    
+    .answer-content {
+        padding: 8px 0 0;
+    }
+    
+    .answer-text p {
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .tutorial-header h2,
+    .faq-header h2 {
+        font-size: 2rem;
+    }
+    
+    .tutorial-description,
+    .faq-description {
+        font-size: 1rem;
+    }
+    
+    .video-premium-box {
+        height: 350px;
+    }
+    
+    .premium-play-btn {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 30px;
+    }
+    
+    .play-btn-inner {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-btn-inner i {
+        font-size: 1.8rem;
+    }
+    
+    .faq-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-premium-header {
+        padding: 16px 16px;
+    }
+    
+    .faq-premium-header h3 {
+        font-size: 1.05rem;
+        padding-right: 40px;
+        line-height: 1.4;
+    }
+    
+    .faq-toggle {
+        right: 16px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .faq-toggle i {
+        font-size: 0.85rem;
+    }
+    
+    .faq-premium-item.active .faq-premium-content {
+        padding: 0 16px 18px;
+    }
+    
+    .answer-content {
+        padding: 6px 0 0;
+    }
+    
+    .answer-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}

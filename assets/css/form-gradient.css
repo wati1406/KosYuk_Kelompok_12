@@ -1,0 +1,327 @@
+/* form-gradient.css - Gradasi Elegan dengan Font Awesome */
+:root {
+    --primary-dark: #0A2C4F;
+    --primary-medium: #1A4A7A;
+    --accent-blue: #18a0fb;
+    --accent-light: #4DC1FF;
+    --light-bg: #f6f8fb;
+    --white: #ffffff;
+    --gray-light: #f0f4f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, 
+        #f6f8fb 0%,
+        #e7f1ff 25%,
+        #d4e6ff 50%,
+        #e7f1ff 75%,
+        #f6f8fb 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Form Container Base */
+.form-page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 40px;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(10, 44, 79, 0.1),
+                0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Efek cahaya di belakang form */
+.form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(24, 160, 251, 0.1) 0%,
+        transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Form Header */
+.form-header {
+    background: linear-gradient(135deg, 
+        var(--primary-dark) 0%,
+        var(--primary-medium) 50%,
+        var(--accent-blue) 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek kilau di header */
+.form-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.form-logo {
+    width: 100px; /* Logo diperbesar */
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.form-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Form Body */
+.form-body {
+    padding: 30px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding-left: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e1e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    color: #2d3748;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(24, 160, 251, 0.15);
+    transform: translateY(-1px);
+}
+
+.form-input::placeholder {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Password Field */
+.password-field {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #718096;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.toggle-password:hover {
+    background: rgba(24, 160, 251, 0.1);
+    color: var(--accent-blue);
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, 
+        var(--primary-dark) 0%,
+        var(--accent-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(24, 160, 251, 0.3);
+    background: linear-gradient(135deg, 
+        var(--primary-medium) 0%,
+        var(--accent-light) 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Links */
+.form-links {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.form-links a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.form-links a:hover {
+    color: var(--primary-dark);
+    background: rgba(24, 160, 251, 0.1);
+}
+
+/* Error/Success Messages */
+.alert {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 0.9rem;
+    border-left: 4px solid transparent;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #ffeaea, #ffcccc);
+    color: #d32f2f;
+    border-left-color: #d32f2f;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    border-left-color: #4caf50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-wrapper {
+        max-width: 100%;
+        margin: 0 15px;
+    }
+    
+    .form-header {
+        padding: 25px 20px;
+    }
+    
+    .form-body {
+        padding: 25px;
+    }
+    
+    .form-logo {
+        width: 85px;
+    }
+}
